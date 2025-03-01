@@ -89,7 +89,12 @@ function clear() {
 }
 let question
 let correct
-let answer
+let answers = {
+    A: 'A',
+    B: 'B',
+    C: 'C',
+    D: 'D'
+}
 let mouse = Vector2.zero
 function run() {
     clear()
@@ -109,6 +114,7 @@ function run() {
     if (mouse.inBoundsRect(new Vector2(canvas.width/2, canvas.height/2), new Vector2(canvas.width/2, canvas.height/2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
         drawRect(new Vector2(canvas.width/2, canvas.height/2), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
     }
+    
 }
 setInterval(run, 1)
 document.addEventListener("mousemove", function() {
