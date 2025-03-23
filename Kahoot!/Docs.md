@@ -1,6 +1,6 @@
 # Docs for Kahoot! project!
 
-there are 2 parts to this project index.html + script.js in root folder and the backend folder
+there are 2 parts to this project index.html + script.js in frontend folder and the backend folder
 
 - index.html + script.js is the frond end that the students will see and use to anwser questions 
 - backend will be what is displayed it will also commuicate with the clients to provide questions and answers 
