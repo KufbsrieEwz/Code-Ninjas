@@ -67,3 +67,7 @@ there are 2 parts to this project index.html + script.js in root folder and the 
   - III is a unqiue ID
 - selectedOptionId: students anwsers
 - timeRemaining: how much time was left before timer hit zero (lower is bad)
+
+## Running the backend
+1. verify node is installed 
+2. in the backend folder run ```node index.js``` 
