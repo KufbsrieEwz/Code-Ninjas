@@ -84,6 +84,11 @@ function write(text, pos, r, g, b, a) {
     c.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`
     c.fillText(text, pos.x, pos.y)
 }
+// function writeCentred(text, pos, r, g, b, a) {
+//     c.font = '20px Arial'
+//     c.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`
+//     c.fillText(text, pos.x, pos.y)
+// }
 function clear() {
     c.clearRect(0, 0, window.innerWidth, window.innerHeight)
 }
@@ -107,12 +112,14 @@ let mouse = Vector2.zero
 function run() {
     clear()
     drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height).multiply(0.5), 232, 62, 68, 1)
-    drawRect(new Vector2(canvas.width/2, 0), new Vector2(canvas.width, canvas.height).multiply(0.5), 95, 160, 223, 1)
-    drawRect(new Vector2(0, canvas.height/2), new Vector2(canvas.width, canvas.height).multiply(0.5), 245, 195, 68, 1)
-    drawRect(new Vector2(canvas.width/2, canvas.height/2), new Vector2(canvas.width, canvas.height).multiply(0.5), 124, 188, 78, 1)
+    drawRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width, canvas.height).multiply(0.5), 95, 160, 223, 1)
+    drawRect(new Vector2(0, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 245, 195, 68, 1)
+    drawRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 124, 188, 78, 1)
     switch (gameState) {
         case 'asking':
             // draw the question prompt
+            drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height), 0, 0, 0, 0.5)
+            drawRect(new Vector2(0, canvas.height / 4), new Vector2(canvas.width, canvas.height / 2), 0, 0, 0, 0.75)
             break
         case 'answering':
             // draw a header of the question
@@ -127,39 +134,42 @@ function run() {
     }
 }
 function click(pos) {
-    if (pos.inBoundsRect(Vector2.zero, Vector2.zero.add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        // A
-        console.log('A')
-    }
-    if (pos.inBoundsRect(new Vector2(canvas.width/2, 0), new Vector2(canvas.width/2, 0).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        // B
-        console.log('B')
-    }
-    if (pos.inBoundsRect(new Vector2(0, canvas.height/2), new Vector2(0, canvas.height/2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        // C
-        console.log('C')
-    }
-    if (pos.inBoundsRect(new Vector2(canvas.width/2, canvas.height/2), new Vector2(canvas.width/2, canvas.height/2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        // D
-        console.log('D')
+    if (gameState == 'answering') {
+        if (pos.inBoundsRect(Vector2.zero, Vector2.zero.add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
+            // A
+            console.log('A')
+        }
+        if (pos.inBoundsRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width / 2, 0).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
+            // B
+            console.log('B')
+        }
+        if (pos.inBoundsRect(new Vector2(0, canvas.height / 2), new Vector2(0, canvas.height / 2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
+            // C
+            console.log('C')
+        }
+        if (pos.inBoundsRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width / 2, canvas.height / 2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
+            // D
+            console.log('D')
+        }
+        gameState = 'answered'
     }
 }
 function discolour(pos) {
     if (pos.inBoundsRect(Vector2.zero, Vector2.zero.add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
         drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
     }
-    if (pos.inBoundsRect(new Vector2(canvas.width/2, 0), new Vector2(canvas.width/2, 0).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        drawRect(new Vector2(canvas.width/2, 0), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
+    if (pos.inBoundsRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width / 2, 0).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
+        drawRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
     }
-    if (pos.inBoundsRect(new Vector2(0, canvas.height/2), new Vector2(0, canvas.height/2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        drawRect(new Vector2(0, canvas.height/2), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
+    if (pos.inBoundsRect(new Vector2(0, canvas.height / 2), new Vector2(0, canvas.height / 2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
+        drawRect(new Vector2(0, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
     }
-    if (pos.inBoundsRect(new Vector2(canvas.width/2, canvas.height/2), new Vector2(canvas.width/2, canvas.height/2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        drawRect(new Vector2(canvas.width/2, canvas.height/2), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
+    if (pos.inBoundsRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width / 2, canvas.height / 2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
+        drawRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
     }
 }
 setInterval(run, 1)
-document.addEventListener("mousemove", function() {
+document.addEventListener("mousemove", function () {
     mouse = new Vector2(event.x, event.y)
 })
 document.addEventListener("click", function (event) {
