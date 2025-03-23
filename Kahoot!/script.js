@@ -133,11 +133,13 @@ function run() {
             break
     }
 }
-function click(pos) {
+async function click(pos) {
     if (gameState == 'answering') {
         if (pos.inBoundsRect(Vector2.zero, Vector2.zero.add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
             // A
-            console.log('A')
+            const response = await fetch('http://localhost:3000/check');
+            const data = await response.json({ answers: 'A' });
+            console.log(data);
         }
         if (pos.inBoundsRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width / 2, 0).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
             // B
