@@ -133,6 +133,24 @@ function run() {
             break
     }
 }
+function shuffleArray(arr) {
+    let indices = arr.map((_, i) => i);
+    let shuffledIndices = [...indices].sort(() => Math.random() - 0.5)
+
+    let shuffledArray = shuffledIndices.map(i => arr[i])
+
+    return { shuffledArray, shuffledIndices }
+}
+
+function unshuffleArray(shuffledArray, shuffledIndices) {
+    let originalArray = new Array(shuffledArray.length)
+    
+    shuffledIndices.forEach((originalIndex, i) => {
+        originalArray[originalIndex] = shuffledArray[i]
+    });
+
+    return originalArray
+}
 async function click(pos) {
     if (gameState == 'answering') {
         if (pos.inBoundsRect(Vector2.zero, Vector2.zero.add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
