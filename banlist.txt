@@ -38,3 +38,4 @@
 ||cpstest.org^
 ||contexto.me^
 ||chess.com^
+||slopeonline.online^
