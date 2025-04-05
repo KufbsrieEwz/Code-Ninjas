@@ -2,8 +2,8 @@
 
 const mongoose = require('mongoose');
 const connectDB = require('../config/db');
-const User = require('../models/User');
-const Quiz = require('../models/Quiz');
+const User = require('../models/user');
+const Quiz = require('../models/quiz');
 const bcrypt = require('bcryptjs');
 
 const runTest = async () => {

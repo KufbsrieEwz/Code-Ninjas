@@ -1,5 +1,5 @@
 // controllers/quizController.js
-const Quiz = require('../models/Quiz');
+const Quiz = require('../models/quiz');
 
 // Create a new quiz
 exports.createQuiz = async (req, res) => {
