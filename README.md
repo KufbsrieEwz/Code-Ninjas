@@ -5,3 +5,5 @@
 - [ ] Make Server / Backend {Zee / Luke?}
 - [ ] Decide On / Make Black Belt Esque Projects Before and After Orange Belt {Jin?}
 - [ ] Aquire Website Domain (Github Pages?)
+
+So...
