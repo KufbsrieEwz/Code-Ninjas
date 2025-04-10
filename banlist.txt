@@ -80,3 +80,5 @@
 ||msn.com^
 ||slope2.online^
 ||orteil.dashnet.org^
+||coreball.co^
+||arealme.com^
