@@ -39,7 +39,8 @@
 ||addictinggames.com^
 ||theuselessweb.com^
 ||cpstest.org^
-||contexto.me^||www.chess.com^
+||contexto.me^
+||www.chess.com^
 ||lichess.org^
 ||chess24.com^
 ||playchess.com^
@@ -74,5 +75,6 @@
 ||chessfans.com^
 ||chesslovers.com^
 ||slopeonline.online^
+||slopeio.org^
 ||whatbeatsrock.com^
 ||msn.com^
