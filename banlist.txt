@@ -8,6 +8,7 @@
 ||neal.fun^
 ||ev.io^
 ||watchdocumentaries.com^
+||dinoswords.gg^
 ||play2048.co^
 ||mope.io^
 ||diep.io^
