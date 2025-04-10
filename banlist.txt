@@ -78,3 +78,5 @@
 ||slopeio.org^
 ||whatbeatsrock.com^
 ||msn.com^
+||slope2.online^
+||orteil.dashnet.org^
