@@ -14,6 +14,7 @@
 ||yandex.com^
 ||doodles.google.com^
 ||geometrydashlitepc.io^
+||geometrydash-lite.io^
 ||itch.io^
 ||agar.io^
 ||slither.io^
