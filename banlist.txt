@@ -3,7 +3,6 @@
 ||kizi.com^
 ||coolmathgames.com^
 ||boredbutton.com^
-||scratch.mit.edu^
 ||turbowarp.com^
 ||nytimes.com^
 ||neal.fun^
@@ -18,6 +17,7 @@
 ||geometrydashlitepc.io^
 ||geometrydash-lite.io^
 ||itch.io^
+||chromedino.com^
 ||agar.io^
 ||slither.io^
 ||krunker.io^
