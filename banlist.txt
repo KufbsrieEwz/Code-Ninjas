@@ -2,6 +2,7 @@
 ||poki.com^
 ||kizi.com^
 ||coolmathgames.com^
+||pokerogue.net^
 ||boredbutton.com^
 ||turbowarp.com^
 ||nytimes.com^
