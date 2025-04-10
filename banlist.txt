@@ -23,6 +23,9 @@
 ||vex7.com^
 ||paper.io^
 ||flagle.io^
+||flagle-game.com^
+||flagle.gg^
+||flagleunlimited.fun^
 ||cnn.com^
 ||foxnews.com^
 ||bbc.com^
