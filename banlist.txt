@@ -8,6 +8,8 @@
 ||nytimes.com^
 ||neal.fun^
 ||ev.io^
+||harrypoter.com^
+||play.nintendo.com^
 ||watchdocumentaries.com^
 ||dinoswords.gg^
 ||play2048.co^
