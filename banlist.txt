@@ -10,6 +10,7 @@
 ||neal.fun^
 ||ev.io^
 ||harrypoter.com^
+||doodles.google^
 ||play.nintendo.com^
 ||watchdocumentaries.com^
 ||dinoswords.gg^
