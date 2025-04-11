@@ -13,6 +13,7 @@
 ||watchdocumentaries.com^
 ||dinoswords.gg^
 ||play2048.co^
+||play2048.com^
 ||monkeytype.com^
 ||nitrotype.com^
 ||typing.com^
