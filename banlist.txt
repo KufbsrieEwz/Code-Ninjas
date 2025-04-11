@@ -6,6 +6,7 @@
 ||boredbutton.com^
 ||turbowarp.com^
 ||nytimes.com^
+||lessons1.live^
 ||neal.fun^
 ||ev.io^
 ||harrypoter.com^
