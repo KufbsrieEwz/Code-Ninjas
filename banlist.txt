@@ -9,7 +9,6 @@
 ||lessons1.live^
 ||neal.fun^
 ||ev.io^
-||fuzzerson.github.io^
 ||harrypoter.com^
 ||doodles.google^
 ||play.nintendo.com^
