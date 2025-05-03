@@ -21,7 +21,7 @@ class Vector2 {
         }
     }
     normalize() {
-        return this.multiply(1 / (Math.sqrt(this.x ** 2 + this.y ** 2)))
+        return Vector2.polar(this.toPolar().a, 1)
     }
     inBoundsRect(thatMin, thatMax) {
         let relativeThis = this.add(thatMin.multiply(-1))
@@ -39,11 +39,20 @@ class Vector2 {
             )
         )
     }
+    floor() {
+        return new Vector2(Math.floor(this.x), Math.floor(this.y))
+    }
+    ceil() {
+        return new Vector2(Math.ceil(this.x), Math.ceil(this.y))
+    }
 }
 Vector2.unit = new Vector2(1, 1)
 Vector2.zero = new Vector2(0, 0)
 Vector2.polar = (a, r) => {
     return new Vector2(Math.cos(a), Math.sin(a)).multiply(r)
+}
+Vector2.random = () => {
+    return new Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1)
 }
 function drawRect(pos, dim, r, g, b, a) {
     c.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`
@@ -111,18 +120,23 @@ let answers = {
 let mouse = Vector2.zero
 function run() {
     clear()
-    drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height).multiply(0.5), 232, 62, 68, 1)
-    drawRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width, canvas.height).multiply(0.5), 95, 160, 223, 1)
-    drawRect(new Vector2(0, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 245, 195, 68, 1)
-    drawRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 124, 188, 78, 1)
     switch (gameState) {
         case 'asking':
+            drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height).multiply(0.5), 232, 62, 68, 1)
+            drawRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width, canvas.height).multiply(0.5), 95, 160, 223, 1)
+            drawRect(new Vector2(0, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 245, 195, 68, 1)
+            drawRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 124, 188, 78, 1)
             // draw the question prompt
             drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height), 0, 0, 0, 0.5)
             drawRect(new Vector2(0, canvas.height / 4), new Vector2(canvas.width, canvas.height / 2), 0, 0, 0, 0.75)
             break
         case 'answering':
             // draw a header of the question
+            drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height / 5), 0, 0, 0, 0.9)
+            drawRect(new Vector2(0, canvas.height / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 232, 62, 68, 1)
+            drawRect(new Vector2(canvas.width / 2, canvas.height / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 95, 160, 223, 1)
+            drawRect(new Vector2(0, canvas.height * 3 / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 245, 195, 68, 1)
+            drawRect(new Vector2(canvas.width / 2, canvas.height * 3 / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 124, 188, 78, 1)
             discolour(mouse)
             break
         case 'answered':
@@ -144,7 +158,7 @@ function shuffleArray(arr) {
 
 function unshuffleArray(shuffledArray, shuffledIndices) {
     let originalArray = new Array(shuffledArray.length)
-    
+
     shuffledIndices.forEach((originalIndex, i) => {
         originalArray[originalIndex] = shuffledArray[i]
     });
@@ -175,17 +189,17 @@ async function click(pos) {
     }
 }
 function discolour(pos) {
-    if (pos.inBoundsRect(Vector2.zero, Vector2.zero.add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        drawRect(Vector2.zero, new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
+    if (pos.inBoundsRect(new Vector2(0, canvas.height / 5), new Vector2(0, canvas.height / 5).add(new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5)))) {
+        drawRect(new Vector2(0, canvas.height / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 0, 0, 0, 0.2)
     }
-    if (pos.inBoundsRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width / 2, 0).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        drawRect(new Vector2(canvas.width / 2, 0), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
+    if (pos.inBoundsRect(new Vector2(canvas.width / 2, canvas.height / 5), new Vector2(canvas.width / 2, canvas.height / 5).add(new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5)))) {
+        drawRect(new Vector2(canvas.width / 2, canvas.height / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 0, 0, 0, 0.2)
     }
-    if (pos.inBoundsRect(new Vector2(0, canvas.height / 2), new Vector2(0, canvas.height / 2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        drawRect(new Vector2(0, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
+    if (pos.inBoundsRect(new Vector2(0, canvas.height * 3 / 5), new Vector2(0, canvas.height * 3 / 5).add(new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5)))) {
+        drawRect(new Vector2(0, canvas.height * 3 / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 0, 0, 0, 0.2)
     }
-    if (pos.inBoundsRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width / 2, canvas.height / 2).add(new Vector2(canvas.width, canvas.height).multiply(0.5)))) {
-        drawRect(new Vector2(canvas.width / 2, canvas.height / 2), new Vector2(canvas.width, canvas.height).multiply(0.5), 0, 0, 0, 0.2)
+    if (pos.inBoundsRect(new Vector2(canvas.width / 2, canvas.height * 3 / 5), new Vector2(canvas.width / 2, canvas.height * 3 / 5).add(new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5)))) {
+        drawRect(new Vector2(canvas.width / 2, canvas.height * 3 / 5), new Vector2(canvas.width, canvas.height * 4 / 5).multiply(0.5), 0, 0, 0, 0.2)
     }
 }
 setInterval(run, 1)
