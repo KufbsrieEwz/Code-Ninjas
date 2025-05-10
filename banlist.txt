@@ -73,6 +73,7 @@
 ||lichess.org^
 ||chess24.com^
 ||playchess.com^
+||chess.com^
 ||www.internetchessclub.com^
 ||www.freechess.org^
 ||www.chessgames.com^
