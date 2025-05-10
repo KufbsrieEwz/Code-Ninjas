@@ -9,6 +9,7 @@
 ||lessons1.live^
 ||neal.fun^
 ||ev.io^
+||mathlab.lol^
 ||harrypoter.com^
 ||doodles.google^
 ||play.nintendo.com^
