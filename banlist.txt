@@ -24,6 +24,7 @@
 ||typing.com^
 ||typingtest.com^
 ||mope.io^
+||sites.google.com^
 ||diep.io^
 ||narrow.one^
 ||yandex.com^
