@@ -84,6 +84,7 @@
 ||lucaschess.com^
 ||pychess.org^
 ||xboard.org^
+||jellymar.io^
 ||chesscube.com^
 ||chessdom.com^
 ||chessvariants.com^
