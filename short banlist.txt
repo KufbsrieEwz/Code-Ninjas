@@ -6,6 +6,7 @@
 ||boredbutton.com^
 ||turbowarp.com^
 ||nytimes.com^
+||pointless.com^
 ||lessons1.live^
 ||neal.fun^
 ||ev.io^
