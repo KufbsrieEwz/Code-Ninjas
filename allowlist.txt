@@ -1,0 +1,10 @@
+||impact.codeninjas.com^
+||google.com^
+||chatgpt.com^
+||arcade.makecode.com^
+||scratch.mit.edu^
+||discussions.unity.com^
+||github.com^
+||scs.gg^
+||dojo.code.ninja^
+||gdp.code.ninja^
