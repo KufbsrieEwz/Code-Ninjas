@@ -50,6 +50,8 @@
 ||netflix.com^
 ||hulu.com^
 ||twitch.tv^
+||23azo-games.github.io^
+||github.io^
 ||disneyplus.com^
 ||primevideo.com^
 ||dailymotion.com^
