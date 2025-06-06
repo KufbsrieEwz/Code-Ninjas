@@ -11,6 +11,7 @@
 ||neal.fun^
 ||ev.io^
 ||mathlab.lol^
+||online-python.com^
 ||itch.io^
 ||harrypoter.com^
 ||doodles.google^
