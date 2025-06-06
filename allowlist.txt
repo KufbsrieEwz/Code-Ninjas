@@ -9,3 +9,10 @@
 ||dojo.code.ninja^
 ||gdp.code.ninja^
 ||kufbsrieewz.github.io^
+||cloudfront.net^
+||amazonaws.com^
+||scs-game.com^
+||scsgame.com^
+||pusher.com^
+||agora.io^
+||photonengine.io^
