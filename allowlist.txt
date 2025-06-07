@@ -4,6 +4,7 @@
 ||arcade.makecode.com^
 ||scratch.mit.edu^
 ||discussions.unity.com^
+||kahoot.it^
 ||github.com^
 ||scs.gg^
 ||dojo.code.ninja^
