@@ -15,6 +15,7 @@
 ||harrypoter.com^
 ||doodles.google^
 ||play.nintendo.com^
+||pizzaedition.one^
 ||watchdocumentaries.com^
 ||dinoswords.gg^
 ||play2048.co^
