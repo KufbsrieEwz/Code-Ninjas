@@ -191,6 +191,7 @@
 ||shellshockers.world^
 ||shellshockers.xyz^
 ||shockers.one^
+||player03.com^
 ||softboiled.club^
 ||urbanegger.com^
 ||violentegg.club^
