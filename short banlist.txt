@@ -14,6 +14,7 @@
 ||itch.io^
 ||harrypoter.com^
 ||doodles.google^
+||slope-game.info^
 ||play.nintendo.com^
 ||pizzaedition.one^
 ||watchdocumentaries.com^
