@@ -17,3 +17,10 @@
 ||pusher.com^
 ||agora.io^
 ||photonengine.io^
+||api.impact.codeninjas.com^
+||static.hotjar.com^
+||v10.events.data.microsoft.com^
+||encrypted-tbn0.gstatic.com^
+||ogads-pa.clients6.google.com^
+||www.gstatic.com^
+||id.google.com^
