@@ -24,3 +24,5 @@
 ||ogads-pa.clients6.google.com^
 ||www.gstatic.com^
 ||id.google.com^
+||typekit.net^
+||hotjar.com^
