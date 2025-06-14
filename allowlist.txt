@@ -26,3 +26,4 @@
 ||id.google.com^
 ||typekit.net^
 ||hotjar.com^
+||unity3d.com^
