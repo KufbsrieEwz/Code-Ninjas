@@ -28,3 +28,5 @@
 ||hotjar.com^
 ||unity3d.com^
 ||blockbench.com^
+||dc.services.visualstudio.com^
+||trg-arcade.userpxt.io^
