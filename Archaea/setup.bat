@@ -8,25 +8,7 @@ echo      A R C H A E A   -   S E T U P   S T A R T
 echo ================================================
 echo.
 
-:: Prompt for hostname
-set /p NEW_HOSTNAME=Enter desired hostname: 
-
-:: Get current hostname
-for /f %%A in ('hostname') do set CURRENT_HOSTNAME=%%A
-
-echo Current hostname: %CURRENT_HOSTNAME%
-echo Desired hostname: %NEW_HOSTNAME%
-
-if /I "%CURRENT_HOSTNAME%"=="%NEW_HOSTNAME%" (
-    echo Hostname is already set to %NEW_HOSTNAME%.
-) else (
-    echo Changing hostname to %NEW_HOSTNAME%...
-    WMIC computersystem where name="%COMPUTERNAME%" call rename name="%NEW_HOSTNAME%"
-    echo You must restart for hostname changes to take effect.
-)
-
 :: Set DNS to 192.168.1.240 on all connected adapters
-echo.
 echo Configuring DNS to 192.168.1.240 on all connected adapters...
 
 for /f "tokens=1,* delims=:" %%A in ('netsh interface show interface ^| findstr /I "Connected"') do (
