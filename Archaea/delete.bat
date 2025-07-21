@@ -52,18 +52,6 @@ for %%D in (Desktop Documents Pictures Videos Music) do (
 
 echo.
 
-:: === CLEAN PROGRAM FILES (EXCLUDING SYSTEM CRITICAL ONES) ===
-set "PF1=C:\Program Files"
-set "PF2=C:\Program Files (x86)"
-
-echo Cleaning %PF1%...
-call :CleanProgramFiles "%PF1%"
-echo.
-echo Cleaning %PF2%...
-call :CleanProgramFiles "%PF2%"
-
-echo.
-
 :: === DONE ===
 echo.
 echo =============================================
@@ -71,25 +59,3 @@ echo     D E L E T I O N   C O M P L E T E
 echo =============================================
 pause
 exit /b
-
-:: === Function to clean non-critical folders in Program Files ===
-:CleanProgramFiles
-set "BASE=%~1"
-
-for /d %%D in ("%BASE%\*") do (
-    set "FOLDER=%%~nxD"
-    set "DELETE=1"
-    if /I "!FOLDER!"=="WindowsApps" set "DELETE=0"
-    if /I "!FOLDER!"=="Windows Defender" set "DELETE=0"
-    if /I "!FOLDER!"=="Common Files" set "DELETE=0"
-    if /I "!FOLDER!"=="Windows NT" set "DELETE=0"
-    if /I "!FOLDER!"=="Internet Explorer" set "DELETE=0"
-
-    if "!DELETE!"=="1" (
-        echo Deleting: %%D
-        rd /s /q "%%D"
-    ) else (
-        echo Skipping critical folder: %%D
-    )
-)
-goto :eof
