@@ -1,5 +1,12 @@
 @echo off
 setlocal enabledelayedexpansion
+title Archaea Setup
+color 0A
+
+echo ================================================
+echo      A R C H A E A   -   S E T U P   S T A R T
+echo ================================================
+echo.
 
 :: Prompt for hostname
 set /p NEW_HOSTNAME=Enter desired hostname: 
@@ -18,28 +25,35 @@ if /I "%CURRENT_HOSTNAME%"=="%NEW_HOSTNAME%" (
     echo You must restart for hostname changes to take effect.
 )
 
-:: Set DNS to 192.168.1.240 on all adapters
-echo Configuring DNS to 192.168.1.240 on all Ethernet and Wi-Fi adapters...
-for /f "tokens=*" %%A in ('netsh interface show interface ^| findstr "Connected"') do (
-    for /f "tokens=1,* delims=:" %%B in ("%%A") do (
-        set INTERFACE_NAME=%%B
-        call :Trim !INTERFACE_NAME!
-        echo Setting DNS for !INTERFACE_NAME!...
-        netsh interface ipv4 set dns name="!INTERFACE_NAME!" static 192.168.1.240 primary
+:: Set DNS to 192.168.1.240 on all connected adapters
+echo.
+echo Configuring DNS to 192.168.1.240 on all connected adapters...
+
+for /f "tokens=1,* delims=:" %%A in ('netsh interface show interface ^| findstr /I "Connected"') do (
+    set "LINE=%%A"
+    for /f "tokens=*" %%I in ("!LINE!") do (
+        call :Trim "%%I"
+        set INTERFACE_NAME=!str!
+        echo Setting DNS for adapter: "!INTERFACE_NAME!"...
+        netsh interface ipv4 set dns name="!INTERFACE_NAME!" static 192.168.1.240 primary >nul 2>&1
     )
 )
 
-:: Check winget availability
+:: Check for winget
+echo.
 where winget >nul 2>&1
 if %errorlevel% neq 0 (
-    echo winget not found! Please install App Installer manually from Microsoft Store.
+    echo ERROR: winget not found! Install App Installer manually from the Microsoft Store.
     pause
     exit /b 1
 )
 
-:: Begin installing apps via winget
-echo Installing required applications using winget...
+:: Install software using winget
+echo Updating winget sources...
 winget source update
+
+echo.
+echo Installing required applications...
 
 call :InstallApp "Unity.UnityHub" "Unity Hub"
 call :InstallApp "Brave.Brave" "Brave Browser"
@@ -47,25 +61,31 @@ call :InstallApp "MITMediaLab.Scratch.3" "Scratch 3"
 call :InstallApp "Mojang.MinecraftLauncher" "Minecraft"
 call :InstallApp "9NBLGGH4R2R6" "Minecraft Education"
 call :InstallApp "Roblox.Roblox" "Roblox Player"
-call :InstallApp "MaximumADHD.RobloxStudioModManager" "Roblox studio"
+call :InstallApp "MaximumADHD.RobloxStudioModManager" "Roblox Studio"
 call :InstallApp "MCreator.MCreator" "MCreator"
 call :InstallApp "GitHub.GitHubDesktop" "GitHub Desktop"
 call :InstallApp "MartiCliment.UniGetUI" "UniGetUI"
 
-:: Run SuperCode installer
-echo Installing SuperCode from local EXE...
-if exist "E:\supercode.exe" (
-    start /wait "" "E:\supercode.exe"
+:: Install SuperCode from Archaea folder
+echo.
+echo Installing SuperCode from local copy...
+set "SUPERPATH=%USERPROFILE%\Downloads\Archaea\supercode.exe"
+if exist "!SUPERPATH!" (
+    echo Running !SUPERPATH!...
+    start /wait "" "!SUPERPATH!"
     echo SuperCode installed successfully.
 ) else (
-    echo ERROR: supercode.exe not found in the current directory.
+    echo ERROR: supercode.exe not found at !SUPERPATH!
 )
 
-echo All done! You may want to restart the computer now.
+echo.
+echo ================================================
+echo          S E T U P   C O M P L E T E
+echo ================================================
 pause
 exit /b
 
-:: Trim leading/trailing whitespace
+:: Trim leading/trailing spaces from a string
 :Trim
 set "str=%~1"
 :TrimLoop
@@ -74,10 +94,10 @@ if not "%str:~-1%"==" " goto :EOF
 set "str=%str:~0,-1%"
 goto TrimLoop
 
-:: Winget app installer function
+:: Function to install apps via winget
 :InstallApp
-set PACKAGE_ID=%~1
-set FRIENDLY_NAME=%~2
+set "PACKAGE_ID=%~1"
+set "FRIENDLY_NAME=%~2"
 echo.
 echo Installing %FRIENDLY_NAME%...
 winget install --exact --id %PACKAGE_ID% --accept-package-agreements --accept-source-agreements
