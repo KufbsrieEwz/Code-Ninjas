@@ -47,6 +47,7 @@ call :InstallApp "MaximumADHD.RobloxStudioModManager" "Roblox Studio"
 call :InstallApp "MCreator.MCreator" "MCreator"
 call :InstallApp "GitHub.GitHubDesktop" "GitHub Desktop"
 call :InstallApp "MartiCliment.UniGetUI" "UniGetUI"
+call :InstallApp "Microsoft.VisualStudio.2022.Community" "Visual Studio 2022 Community"
 
 :: Install SuperCode from Archaea folder
 echo.
