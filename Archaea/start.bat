@@ -3,7 +3,7 @@ title Start.bat - System Reset & Setup
 color 0E
 
 echo =====================================================
-echo      A R C H A E A   -   S Y S T E M   I N I T
+echo       A R C H A E A   -   S Y S T E M   I N I T
 echo =====================================================
 echo.
 
@@ -15,20 +15,24 @@ call "%~dp0delete.bat"
 echo Running setup.bat...
 call "%~dp0setup.bat"
 
-:: Step 3 - Prepare to clean up the Archaea folder
-echo Preparing Archaea folder cleanup...
+:: Step 3 - Create a self-deleting cleanup script
+echo Creating deferred cleanup script...
 
-:: Change directory to avoid being inside Archaea
-cd /d "%USERPROFILE%\Downloads"
+set CLEANUP_SCRIPT=%TEMP%\_cleanup_Archaea.bat
 
-:: Create temporary cleanup script
-set CLEANUP_SCRIPT=%TEMP%\cleanup.bat
-echo @echo off > "%CLEANUP_SCRIPT%"
-echo timeout /t 3 /nobreak > "%CLEANUP_SCRIPT%"
-echo rd /s /q "%~dp0" >> "%CLEANUP_SCRIPT%"
-echo del "%%~f0" >> "%CLEANUP_SCRIPT%"
+(
+echo @echo off
+echo timeout /t 10 /nobreak >nul
+echo tasklist ^| findstr /I "supercode.exe" >nul
+echo if %%errorlevel%% equ 0 (
+echo     echo SuperCode still running. Cleanup postponed.
+echo     exit /b
+echo )
+echo rd /s /q "%~dp0"
+echo del "%%~f0"
+) > "%CLEANUP_SCRIPT%"
 
-:: Run the cleanup script
+:: Step 4 - Run cleanup script in background
 start "" "%CLEANUP_SCRIPT%"
 
 echo.
