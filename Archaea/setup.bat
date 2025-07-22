@@ -41,6 +41,7 @@ call :InstallApp "Unity.UnityHub" "Unity Hub"
 :: Install Unity Editor 2022.3.20f1 via Unity Hub CLI
 echo Installing Unity Editor 2022.3.20f1 via Unity Hub...
 start /wait "" "%LocalAppData%\Programs\Unity Hub\Unity Hub.exe" -- --headless install --version 2022.3.20f1 --changeset 84ab732f9cbd --module win-mono
+
 call :InstallApp "Brave.Brave" "Brave Browser"
 call :InstallApp "MITMediaLab.Scratch.3" "Scratch 3"
 call :InstallApp "Mojang.MinecraftLauncher" "Minecraft"
@@ -51,6 +52,7 @@ call :InstallApp "MCreator.MCreator" "MCreator"
 call :InstallApp "GitHub.GitHubDesktop" "GitHub Desktop"
 call :InstallApp "MartiCliment.UniGetUI" "UniGetUI"
 call :InstallApp "Microsoft.VisualStudio.2022.Community" "Visual Studio 2022 Community"
+call :InstallApp "BlenderFoundation.Blender" "Blender"
 
 :: Install SuperCode from Archaea folder
 echo.
