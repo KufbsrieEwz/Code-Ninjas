@@ -11,3 +11,5 @@ is a set of windows Batch files that are used to reset and setup Dojo PCs to mai
 - [ ] fix delete so it doesn't courupt system
 - [ ] create a script / system that will run from a network share
 - [ ] add command line flags for certain settings + a default  
+- [ ] fix DNS assignment so that it properly sets it to adguard
+- [ ] add unity and visual studio to the list of apps to be downloaded during the setup process
