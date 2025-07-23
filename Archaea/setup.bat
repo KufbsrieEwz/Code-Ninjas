@@ -70,7 +70,6 @@ echo.
 echo ================================================
 echo          S E T U P   C O M P L E T E
 echo ================================================
-pause
 exit /b
 
 :: Trim leading/trailing spaces from a string
