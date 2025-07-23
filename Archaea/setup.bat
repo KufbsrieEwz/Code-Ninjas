@@ -4,7 +4,7 @@ title Archaea Setup
 color 0A
 
 echo ================================================
-echo      A R C H A E A   -   S E T U P   S T A R T
+echo     A R C H A E A   -   S E T U P   S T A R T
 echo ================================================
 echo.
 
@@ -30,14 +30,26 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: Install software using winget
+:: Update winget sources
 echo Updating winget sources...
 winget source update
 
+:: Install software using winget
 echo.
 echo Installing required applications...
 
 call :InstallApp "Unity.UnityHub" "Unity Hub"
+
+:: Wait for Unity Hub installation
+echo Waiting for Unity Hub to be installed...
+:WaitForUnityHub
+if exist "%LocalAppData%\Programs\Unity Hub\Unity Hub.exe" (
+    echo Unity Hub found.
+) else (
+    timeout /t 5 >nul
+    goto WaitForUnityHub
+)
+
 :: Install Unity Editor 2022.3.20f1 via Unity Hub CLI
 echo Installing Unity Editor 2022.3.20f1 via Unity Hub...
 start /wait "" "%LocalAppData%\Programs\Unity Hub\Unity Hub.exe" -- --headless install --version 2022.3.20f1 --changeset 84ab732f9cbd --module win-mono
@@ -70,6 +82,7 @@ echo.
 echo ================================================
 echo          S E T U P   C O M P L E T E
 echo ================================================
+pause
 exit /b
 
 :: Trim leading/trailing spaces from a string
