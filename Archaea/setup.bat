@@ -4,7 +4,7 @@ title Archaea Setup
 color 0A
 
 echo ================================================
-echo      A R C H A E A   -   S E T U P   S T A R T
+echo     A R C H A E A   -   S E T U P   S T A R T
 echo ================================================
 echo.
 
