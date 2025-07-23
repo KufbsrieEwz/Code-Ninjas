@@ -4,7 +4,7 @@ title Archaea Setup
 color 0A
 
 echo ================================================
-echo     A R C H A E A   -   S E T U P   S T A R T
+echo      A R C H A E A   -   S E T U P   S T A R T
 echo ================================================
 echo.
 
@@ -30,30 +30,29 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: Update winget sources
+:: Install software using winget
 echo Updating winget sources...
 winget source update
 
-:: Install software using winget
 echo.
 echo Installing required applications...
 
 call :InstallApp "Unity.UnityHub" "Unity Hub"
 
-:: Wait for Unity Hub installation
+:: Wait for Unity Hub to be fully installed before proceeding
 echo Waiting for Unity Hub to be installed...
-:WaitForUnityHub
-if exist "%LocalAppData%\Programs\Unity Hub\Unity Hub.exe" (
-    echo Unity Hub found.
+timeout /t 10 >nul
+
+:: Install Unity Editor via Unity Hub CLI
+set "UNITY_HUB_EXE=C:\Program Files\Unity Hub\Unity Hub.exe"
+if exist "!UNITY_HUB_EXE!" (
+    echo Installing Unity Editor 2022.3.20f1 via Unity Hub...
+    start /wait "" "!UNITY_HUB_EXE!" -- --headless install --version 2022.3.20f1 --changeset 84ab732f9cbd --module win-mono
 ) else (
-    timeout /t 5 >nul
-    goto WaitForUnityHub
+    echo ERROR: Unity Hub not found at expected location: !UNITY_HUB_EXE!
 )
 
-:: Install Unity Editor 2022.3.20f1 via Unity Hub CLI
-echo Installing Unity Editor 2022.3.20f1 via Unity Hub...
-start /wait "" "%LocalAppData%\Programs\Unity Hub\Unity Hub.exe" -- --headless install --version 2022.3.20f1 --changeset 84ab732f9cbd --module win-mono
-
+call :InstallApp "BlenderFoundation.Blender" "Blender"
 call :InstallApp "Brave.Brave" "Brave Browser"
 call :InstallApp "MITMediaLab.Scratch.3" "Scratch 3"
 call :InstallApp "Mojang.MinecraftLauncher" "Minecraft"
@@ -64,7 +63,6 @@ call :InstallApp "MCreator.MCreator" "MCreator"
 call :InstallApp "GitHub.GitHubDesktop" "GitHub Desktop"
 call :InstallApp "MartiCliment.UniGetUI" "UniGetUI"
 call :InstallApp "Microsoft.VisualStudio.2022.Community" "Visual Studio 2022 Community"
-call :InstallApp "BlenderFoundation.Blender" "Blender"
 
 :: Install SuperCode from Archaea folder
 echo.
