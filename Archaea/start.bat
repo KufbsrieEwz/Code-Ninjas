@@ -7,6 +7,15 @@ echo       A R C H A E A   -   S Y S T E M   I N I T
 echo =====================================================
 echo.
 
+:: Step 0 - Check for winget
+echo.
+where winget >nul 2>&1
+if %errorlevel% neq 0 (
+    echo ERROR: winget not found! Install App Installer manually from the Microsoft Store.
+    pause
+    exit /b 1
+)
+
 :: Step 1 - Run delete.bat
 echo Running delete.bat...
 call "%~dp0delete.bat"
