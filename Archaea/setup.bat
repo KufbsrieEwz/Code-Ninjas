@@ -8,15 +8,6 @@ echo     A R C H A E A   -   S E T U P   S T A R T
 echo ================================================
 echo.
 
-:: Prompt for interface name
-set "INTERFACE_NAME=WiFi"
-echo.
-echo Configuring DNS to 192.168.1.240 on adapter: "!INTERFACE_NAME!"...
-
-:: Set static DNS
-netsh interface ipv4 set dns name="!INTERFACE_NAME!" static 192.168.1.240 primary
-netsh interface ipv4 add dns name="!INTERFACE_NAME!" 192.168.1.240 index=2
-
 :: Check for winget
 echo.
 where winget >nul 2>&1
@@ -71,6 +62,15 @@ if exist "!SUPERPATH!" (
 ) else (
     echo ERROR: supercode.exe not found at !SUPERPATH!
 )
+
+:: Configuring DNS
+set "INTERFACE_NAME=WiFi"
+echo.
+echo Configuring DNS to 192.168.1.240 on adapter: "!INTERFACE_NAME!"...
+
+:: Set static DNS
+netsh interface ipv4 set dns name="!INTERFACE_NAME!" static 192.168.1.240 primary
+netsh interface ipv4 add dns name="!INTERFACE_NAME!" 192.168.1.240 index=2
 
 echo.
 echo ================================================
