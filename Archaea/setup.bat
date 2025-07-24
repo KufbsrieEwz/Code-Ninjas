@@ -8,18 +8,14 @@ echo     A R C H A E A   -   S E T U P   S T A R T
 echo ================================================
 echo.
 
-:: Set DNS to 192.168.1.240 on all connected adapters
-echo Configuring DNS to 192.168.1.240 on all connected adapters...
+:: Prompt for interface name
+set "INTERFACE_NAME=WiFi"
+echo.
+echo Configuring DNS to 192.168.1.240 on adapter: "!INTERFACE_NAME!"...
 
-for /f "tokens=1,* delims=:" %%A in ('netsh interface show interface ^| findstr /I "Connected"') do (
-    set "LINE=%%A"
-    for /f "tokens=*" %%I in ("!LINE!") do (
-        call :Trim "%%I"
-        set INTERFACE_NAME=!str!
-        echo Setting DNS for adapter: "!INTERFACE_NAME!"...
-        netsh interface ipv4 set dns name="!INTERFACE_NAME!" static 192.168.1.240 primary >nul 2>&1
-    )
-)
+:: Set static DNS
+netsh interface ipv4 set dns name="!INTERFACE_NAME!" static 192.168.1.240 primary
+netsh interface ipv4 add dns name="!INTERFACE_NAME!" 192.168.1.240 index=2
 
 :: Check for winget
 echo.
@@ -39,7 +35,7 @@ echo Installing required applications...
 
 call :InstallApp "Unity.UnityHub" "Unity Hub"
 
-:: Wait for Unity Hub to be fully installed before proceeding
+:: Wait briefly before checking install path
 echo Waiting for Unity Hub to be installed...
 timeout /t 10 >nul
 
@@ -82,15 +78,6 @@ echo          S E T U P   C O M P L E T E
 echo ================================================
 pause
 exit /b
-
-:: Trim leading/trailing spaces from a string
-:Trim
-set "str=%~1"
-:TrimLoop
-if "%str:~0,1%"==" " set "str=%str:~1%" & goto TrimLoop
-if not "%str:~-1%"==" " goto :EOF
-set "str=%str:~0,-1%"
-goto TrimLoop
 
 :: Function to install apps via winget
 :InstallApp
