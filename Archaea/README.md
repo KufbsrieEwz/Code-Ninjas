@@ -7,6 +7,5 @@ is a set of windows Batch files that are used to reset and setup Dojo PCs to mai
 - winget: installs winget
 
 ### TODO
-- [ ] add winget and setup into one script
 - [ ] create a script / system that will run from a network share
 - [ ] add command line flags for certain settings + a default
