@@ -76,7 +76,6 @@ echo.
 echo ================================================
 echo          S E T U P   C O M P L E T E
 echo ================================================
-pause
 exit /b
 
 :: Function to install apps via winget
