@@ -9,4 +9,5 @@ is a set of windows Batch files that are used to reset and setup Dojo PCs to mai
 ### TODO
 - [ ] create a script / system that will run from a network share
 - [ ] add command line flags for certain settings + a default
-- [ ] fix DNS assignment to work on all computers
+- [x] fix winget.bat
+- [x] fix DNS assignment to work on all computers
