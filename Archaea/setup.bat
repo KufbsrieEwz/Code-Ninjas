@@ -9,7 +9,7 @@ echo ================================================
 echo.
 
 :: Check for winget
-echo.
+echo Checking for winget...
 where winget >nul 2>&1
 if %errorlevel% neq 0 (
     echo ERROR: winget not found! Install App Installer manually from the Microsoft Store.
@@ -17,28 +17,33 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: Install software using winget
+:: Update winget sources
 echo Updating winget sources...
 winget source update
 
 echo.
 echo Installing required applications...
 
+:: Install Unity Hub
 call :InstallApp "Unity.UnityHub" "Unity Hub"
 
-:: Wait briefly before checking install path
-echo Waiting for Unity Hub to be installed...
+:: Wait for Unity Hub installation
+echo Waiting for Unity Hub to finish installing...
 timeout /t 10 >nul
 
-:: Install Unity Editor via Unity Hub CLI
+:: Install Unity Editors via Unity Hub CLI
 set "UNITY_HUB_EXE=C:\Program Files\Unity Hub\Unity Hub.exe"
 if exist "!UNITY_HUB_EXE!" (
-    echo Installing Unity Editor 2022.3.20f1 via Unity Hub...
+    echo Installing Unity Editor 2022.3.20f1...
     start /wait "" "!UNITY_HUB_EXE!" -- --headless install --version 2022.3.20f1 --changeset 84ab732f9cbd --module win-mono
+
+    echo Installing Unity Editor 6.2.0b10...
+    start /wait "" "!UNITY_HUB_EXE!" -- --headless install --version 6.2.0b10 --changeset eb0fd4b17661 --module win-mono
 ) else (
     echo ERROR: Unity Hub not found at expected location: !UNITY_HUB_EXE!
 )
 
+:: Install other applications
 call :InstallApp "BlenderFoundation.Blender" "Blender"
 call :InstallApp "Brave.Brave" "Brave Browser"
 call :InstallApp "MITMediaLab.Scratch.3" "Scratch 3"
@@ -51,7 +56,7 @@ call :InstallApp "GitHub.GitHubDesktop" "GitHub Desktop"
 call :InstallApp "MartiCliment.UniGetUI" "UniGetUI"
 call :InstallApp "Microsoft.VisualStudio.2022.Community" "Visual Studio 2022 Community"
 
-:: Install SuperCode from Archaea folder
+:: Install SuperCode from local folder
 echo.
 echo Installing SuperCode from local copy...
 set "SUPERPATH=%USERPROFILE%\Downloads\Archaea\supercode.exe"
@@ -63,19 +68,23 @@ if exist "!SUPERPATH!" (
     echo ERROR: supercode.exe not found at !SUPERPATH!
 )
 
-:: Configuring DNS
-set "INTERFACE_NAME=WiFi"
+:: Set DNS for common Wi-Fi names
 echo.
-echo Configuring DNS to 192.168.1.240 on adapter: "!INTERFACE_NAME!"...
-
-:: Set static DNS
-netsh interface ipv4 set dns name="!INTERFACE_NAME!" static 192.168.1.240 primary
-netsh interface ipv4 add dns name="!INTERFACE_NAME!" 192.168.1.240 index=2
+echo Configuring DNS for Wi-Fi interfaces...
+for %%I in ("Wi-Fi" "WiFi") do (
+    netsh interface show interface name=%%~I >nul 2>&1
+    if !errorlevel! EQU 0 (
+        echo Setting DNS for interface: %%~I
+        netsh interface ipv4 set dns name="%%~I" static 192.168.1.240 primary
+        netsh interface ipv4 add dns name="%%~I" 192.168.1.240 index=2
+    )
+)
 
 echo.
 echo ================================================
 echo          S E T U P   C O M P L E T E
 echo ================================================
+pause
 exit /b
 
 :: Function to install apps via winget
