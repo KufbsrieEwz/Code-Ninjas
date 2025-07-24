@@ -7,6 +7,20 @@ echo       A R C H A E A   -   S Y S T E M   I N I T
 echo =====================================================
 echo.
 
+:: Check for administrator permissions
+
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    color 0C
+    echo =====================================================
+    echo   ERROR: Administrator privileges required!
+    echo   Please right-click and select "Run as administrator"
+    echo =====================================================
+    echo.
+    pause
+    exit /b 1
+)
+
 :: Step 0 - Check for winget
 echo.
 where winget >nul 2>&1
