@@ -30,6 +30,7 @@ echo     exit /b
 echo )
 echo rd /s /q "%~dp0"
 echo del "%%~f0"
+echo exit
 ) > "%CLEANUP_SCRIPT%"
 
 :: Step 4 - Run cleanup script in background
