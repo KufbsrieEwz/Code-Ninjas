@@ -25,7 +25,13 @@ if %errorlevel% neq 0 (
 echo.
 where winget >nul 2>&1
 if %errorlevel% neq 0 (
-    echo ERROR: winget not found! Install App Installer manually from the Microsoft Store.
+    echo Winget not found. Attempting to install...
+    powershell -Command "\
+      $url = (Invoke-RestMethod https://api.github.com/repos/microsoft/winget-cli/releases/latest).assets.browser_download_url | Where-Object { $_ -match '.msixbundle$' }; \
+       Invoke-WebRequest -Uri $url -OutFile '%TEMP%\\winget.msixbundle' -UseBasicParsing;"
+    powershell -Command "Add-AppxPackage -Path '%TEMP%\\winget.msixbundle'"
+    del "%TEMP%\winget.msixbundle"
+    echo Winget installation complete. Please re-run this script.
     pause
     exit /b 1
 )
