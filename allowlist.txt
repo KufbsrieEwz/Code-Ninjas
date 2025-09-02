@@ -31,3 +31,4 @@
 ||dc.services.visualstudio.com^
 ||trg-arcade.userpxt.io^
 ||search.brave.com^
+||cdn.oaistatic.com^
