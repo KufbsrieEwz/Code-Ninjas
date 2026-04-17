@@ -207,3 +207,4 @@
 ||yolk.today^
 ||slowroads.io^
 ||poki-unblocked1.github.io^
+||bloxd.io^
