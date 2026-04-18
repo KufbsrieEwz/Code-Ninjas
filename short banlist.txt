@@ -208,3 +208,5 @@
 ||slowroads.io^
 ||poki-unblocked1.github.io^
 ||bloxd.io^
+||cookie-clicker2.com^
+||funclicker.org^
