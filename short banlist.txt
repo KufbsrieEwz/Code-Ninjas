@@ -210,3 +210,4 @@
 ||bloxd.io^
 ||cookie-clicker2.com^
 ||funclicker.org^
+||1games.io^
