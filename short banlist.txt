@@ -212,3 +212,4 @@
 ||funclicker.org^
 ||1games.io^
 ||youtube.com^
+||hotgames.io^
