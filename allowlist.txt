@@ -1,14 +1,13 @@
-||impact.codeninjas.com^
+||codeninjas.com^
 ||google.com^
 ||chatgpt.com^
-||arcade.makecode.com^
+||makecode.com^
 ||scratch.mit.edu^
 ||unity.com^
 ||kahoot.it^
 ||github.com^
 ||scs.gg^
-||dojo.code.ninja^
-||gdp.code.ninja^
+||code.ninja^
 ||kufbsrieewz.github.io^
 ||cloudfront.net^
 ||amazonaws.com^
