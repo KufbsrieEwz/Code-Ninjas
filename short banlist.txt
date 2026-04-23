@@ -213,3 +213,10 @@
 ||1games.io^
 ||youtube.com^
 ||hotgames.io^
+||eaglercraft.com^
+||1v1lol.us.com^
+||lolshot.io^
+||twoplayergames.org^
+||crazy-games.gitlab.io^
+||lagged.com^
+||playhop.com^
