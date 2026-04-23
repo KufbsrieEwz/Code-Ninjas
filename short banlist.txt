@@ -220,3 +220,4 @@
 ||crazy-games.gitlab.io^
 ||lagged.com^
 ||playhop.com^
+||neonpong.io^
