@@ -233,3 +233,10 @@
 ||curverush.com
 ||prodigygame.com^
 ||evowars.io^
+||stug.io^
+||poxel.io^
+||repuls.io^
+||spacewaves.io^
+||typeracer.com^
+||speedtypingonline.com^
+||fandom.com^
