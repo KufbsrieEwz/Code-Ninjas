@@ -225,3 +225,5 @@
 ||create.roblox.com^
 ||geometrylitepc.io^
 ||minefun.io^
+||2048cupcakes.net^
+||2048cupcakes.org^
