@@ -223,3 +223,4 @@
 ||neonpong.io^
 ||roblox.com^
 ||create.roblox.com^
+||geometrylitepc.io^
