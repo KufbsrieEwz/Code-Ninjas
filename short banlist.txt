@@ -224,3 +224,4 @@
 ||roblox.com^
 ||create.roblox.com^
 ||geometrylitepc.io^
+||minefun.io^
