@@ -32,3 +32,4 @@
 ||search.brave.com^
 ||cdn.oaistatic.com^
 ||impact-us-webpubsub.webpubsub.azure.com^
+||music.youtube.com^
