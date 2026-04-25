@@ -35,3 +35,5 @@
 ||music.youtube.com^
 ||googleapis.com^
 ||cookielaw.org^
+||amplitude.com^
+||analytics.cloud.coveo.com^
