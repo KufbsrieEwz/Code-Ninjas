@@ -242,3 +242,4 @@
 ||fandom.com^
 ||vectaria.io^
 ||veck.io^
+||dinogamemods.org^
