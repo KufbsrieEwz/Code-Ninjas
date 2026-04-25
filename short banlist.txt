@@ -240,3 +240,4 @@
 ||typeracer.com^
 ||speedtypingonline.com^
 ||fandom.com^
+||vectaria.io^
