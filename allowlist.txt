@@ -37,3 +37,4 @@
 ||cookielaw.org^
 ||amplitude.com^
 ||analytics.cloud.coveo.com^
+||bing.com^
