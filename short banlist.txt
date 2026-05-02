@@ -243,3 +243,4 @@
 ||vectaria.io^
 ||veck.io^
 ||dinogamemods.org^
+||slope-2.io^
