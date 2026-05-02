@@ -244,3 +244,4 @@
 ||veck.io^
 ||dinogamemods.org^
 ||slope-2.io^
+||playgama.com^
