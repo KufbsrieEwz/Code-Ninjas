@@ -38,3 +38,4 @@
 ||amplitude.com^
 ||analytics.cloud.coveo.com^
 ||bing.com^
+||pomofocus.io^
