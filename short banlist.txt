@@ -250,3 +250,4 @@
 ||weavesilk.com^
 ||google-snake-mods.pages.dev^
 ||snake-game.io^
+||frontwars.io^
