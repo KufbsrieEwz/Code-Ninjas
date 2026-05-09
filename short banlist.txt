@@ -248,3 +248,4 @@
 ||crazygamesx.com^
 ||thisissand.com^
 ||weavesilk.com^
+||google-snake-mods.pages.dev^
