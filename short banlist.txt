@@ -252,3 +252,4 @@
 ||snake-game.io^
 ||frontwars.io^
 ||blooket.com^
+||myinstants.com^
