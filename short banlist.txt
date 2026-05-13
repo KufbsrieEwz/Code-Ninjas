@@ -251,3 +251,4 @@
 ||google-snake-mods.pages.dev^
 ||snake-game.io^
 ||frontwars.io^
+||blooket.com^
