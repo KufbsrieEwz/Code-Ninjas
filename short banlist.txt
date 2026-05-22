@@ -253,3 +253,4 @@
 ||frontwars.io^
 ||blooket.com^
 ||myinstants.com^
+||all2048.com^
