@@ -254,3 +254,4 @@
 ||blooket.com^
 ||myinstants.com^
 ||all2048.com^
+||impact.codeninjas.com/community^
