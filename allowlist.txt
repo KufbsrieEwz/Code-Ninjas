@@ -1,4 +1,8 @@
-||codeninjas.com^
+||impact.codeninjas.com/login^
+||impact.codeninjas.com/level^
+||impact.codeninjas.com/home^
+||impact.codeninjas.com/achievements^
+||impact.codeninjas.com/mystuff^
 ||google.com^
 ||chatgpt.com^
 ||makecode.com^
