@@ -1,4 +1,5 @@
 ||impact.codeninjas.com^
+||ninjahub.codeninjas.com^
 ||impact.codeninjas.com/login^
 ||impact.codeninjas.com/level^
 ||impact.codeninjas.com/home^
