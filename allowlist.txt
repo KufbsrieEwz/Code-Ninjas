@@ -1,4 +1,5 @@
 ||codeninjas.com^
+||makecode.com^
 ||ninjahub.codeninjas.com^
 ||impact.codeninjas.com/login^
 ||impact.codeninjas.com/level^
