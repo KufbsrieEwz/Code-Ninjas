@@ -46,3 +46,5 @@
 ||analytics.cloud.coveo.com^
 ||bing.com^
 ||pomofocus.io^
+||b2clogin.com^
+||timeapi.io^
