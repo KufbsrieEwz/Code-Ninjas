@@ -1,3 +1,4 @@
+*ninja*
 ||codeninjas.com^
 ||makecode.com^
 ||ninjahub.codeninjas.com^
