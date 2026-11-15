@@ -67,3 +67,14 @@
 ||p.veritone-ce.com^
 ||pixel.veritone-ce.com^
 ||impactassetsproduction.blob.core.windows.net^
+||ninjaloginb2c.b2clogin.com^
+||api.impact.codeninjas.com^
+||impact.codeninjas.com^
+||ninjahub.codeninjas.com^
+||static.hotjar.com^
+||metrics.hotjar.io^
+||assets.onestore.ms^
+||timeapi.io^
+||p.typekit.net^
+||use.typekit.net^
+||impactassetsproduction.blob.core.windows.net^
