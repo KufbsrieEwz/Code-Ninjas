@@ -50,3 +50,5 @@
 ||b2clogin.com^
 ||timeapi.io^
 ||duckduckgo.com^
+||dns.google^
+||googleusercontent.com^
