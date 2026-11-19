@@ -53,3 +53,4 @@
 ||dns.google^
 ||googleusercontent.com^
 ||browser.events.data.msn.com^
+||haisenhaven.com^
