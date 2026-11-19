@@ -52,3 +52,4 @@
 ||duckduckgo.com^
 ||dns.google^
 ||googleusercontent.com^
+||browser.events.data.msn.com^
