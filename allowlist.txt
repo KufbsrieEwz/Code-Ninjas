@@ -48,13 +48,16 @@
 ||bing.com^
 ||pomofocus.io^
 ||b2clogin.com^
+||ninjaloginb2c.b2clogin.com^
 ||timeapi.io^
 ||duckduckgo.com^
 ||dns.google^
 ||googleusercontent.com^
 ||browser.events.data.msn.com^
 ||haisenhaven.com^
-||g.live.com^
+||live.com^
 ||microsoft.com^
 ||my.microsoftpersonalcontent.com^
 ||cn-impact-api.azure-api.net^
+||hotjar.com^
+||api-js.mixpanel.com^
