@@ -57,3 +57,4 @@
 ||g.live.com^
 ||microsoft.com^
 ||my.microsoftpersonalcontent.com^
+||cn-impact-api.azure-api.net^
