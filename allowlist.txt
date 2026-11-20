@@ -54,3 +54,6 @@
 ||googleusercontent.com^
 ||browser.events.data.msn.com^
 ||haisenhaven.com^
+||g.live.com^
+||microsoft.com^
+||my.microsoftpersonalcontent.com^
