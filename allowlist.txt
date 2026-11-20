@@ -53,3 +53,4 @@
 ||cn-impact-api.azure-api.net^
 ||hotjar.com^
 ||api-js.mixpanel.com^
+||netgear.com^
