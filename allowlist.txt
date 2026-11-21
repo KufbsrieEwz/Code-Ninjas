@@ -61,4 +61,4 @@
 ||www.googletagmanager.com^
 ||joinhomebase.com^
 ||chatgpt.com^
-||chat.openai.com^
+||openai.com^
