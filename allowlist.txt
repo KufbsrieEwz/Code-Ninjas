@@ -7,8 +7,6 @@
 ||impact.codeninjas.com/home^
 ||impact.codeninjas.com/achievements^
 ||impact.codeninjas.com/mystuff^
-||www.google.com^
-||search.google.com
 ||makecode.com^
 ||scratch.mit.edu^
 ||unity.com^
