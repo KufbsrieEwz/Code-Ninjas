@@ -60,3 +60,5 @@
 ||pagead2.googlesyndication.com^
 ||www.googletagmanager.com^
 ||joinhomebase.com^
+||chatgpt.com^
+||chat.openai.com^
