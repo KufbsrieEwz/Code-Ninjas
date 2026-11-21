@@ -54,3 +54,8 @@
 ||hotjar.com^
 ||api-js.mixpanel.com^
 ||netgear.com^
+||tr.capterra.com^
+||api.consentjs.datagrail.io^
+||pagead2.googlesyndication.com^
+||www.googletagmanager.com^
+||joinhomebase.com^
