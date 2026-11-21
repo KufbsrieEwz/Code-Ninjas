@@ -1,8 +1,5 @@
 ||uhf-exp-fd-gbcrdgggfbggh0g3.b02.azurefd.net^
 ||ninjaloginb2c.b2clogin.com^
-||bat.bing.com^
-||c.bing.com^
-||bat.bing.net^
 ||cdn-cookieyes.com^
 ||c.clarity.ms^
 ||p.clarity.ms^
