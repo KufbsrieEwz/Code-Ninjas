@@ -25,7 +25,6 @@
 ||givebutter.com^
 ||widgets.givebutter.com^
 ||www.google-analytics.com^
-||www.google.com^
 ||maps.googleapis.com^
 ||pagead2.googlesyndication.com^
 ||www.googletagmanager.com^
